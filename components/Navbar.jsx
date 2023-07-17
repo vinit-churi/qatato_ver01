@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Logo from "@/assets/Qatoto.svg";
 import menuIcon from "@/assets/menu.svg";
@@ -6,11 +7,13 @@ import micIcon from "@/assets/mic.svg";
 import notificationIcon from "@/assets/notifications.svg";
 import translateIcon from "@/assets/translate.svg";
 import accountIcon from "@/assets/account_circle.svg";
+import useQatatoContext from "@/hooks/useQatatoContext";
 const Navbar = () => {
     /* state to be replaced later */
-    let user = null;
+    const { user, setUser } = useQatatoContext();
+    console.log(user, setUser);
     return (
-        <div className="flex h-[56px]">
+        <div className="flex h-[56px] col-span-2">
             <div className="flex flex-[0_0_max-content] ">
                 <Image
                     className="mx-[28px] cursor-pointer"
@@ -42,7 +45,7 @@ const Navbar = () => {
                     />
                 </form>
                 <Image
-                    className="border-[#CCE8E9] cursor-pointer border-2 rounded-full h-[40px] w-[40px] flex items-center justify-center p-[8px] ml-4"
+                    className="border-[#CCE8E9] cursor-pointer border-2 rounded-full h-[40px] w-[40px] flex items-center justify-center p-[8px] ml-2"
                     height={24}
                     width={24}
                     src={micIcon}
@@ -58,13 +61,13 @@ const Navbar = () => {
                     alt="mic"
                 />
                 <Image
-                    className="border-[#CCE8E9] cursor-pointer border-2 rounded-full h-[40px] w-[40px] flex items-center justify-center p-[8px] ml-4"
+                    className="border-[#CCE8E9] cursor-pointer border-2 rounded-full h-[40px] w-[40px] flex items-center justify-center p-[8px] ml-2"
                     height={24}
                     width={24}
                     src={translateIcon}
                     alt="mic"
                 />
-                <button className="flex cursor-pointer gap-[8px] items-center border-2 border-[#CCE8E9] border-2 rounded-full h-[40px] px-[10px] ml-[10px] mr-[10px] g-[5px]">
+                <button className="flex cursor-pointer gap-[8px] items-center border-2 border-[#CCE8E9] border-2 rounded-full h-[40px] px-[8px] ml-2 mr-[24px] g-[5px]">
                     <Image
                         className="h-[40px] w-[auto] flex items-center justify-center py-[8px]"
                         height={24}
